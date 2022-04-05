@@ -29,7 +29,7 @@ public class VakcinaService {
         return vakcinaDto;
 
     }
-    //List of osob
+    //List of vakcina
     @Transactional
 
 
