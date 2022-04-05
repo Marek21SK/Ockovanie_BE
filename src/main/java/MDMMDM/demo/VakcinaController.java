@@ -8,18 +8,15 @@ import java.util.List;
 public class VakcinaController {
     private VakcinaService vakcinaService;
 
-
     public VakcinaController(VakcinaService vakcinaService) {
         this.vakcinaService = vakcinaService;
-
     }
 
     //Create vakcina
-    @PostMapping("/api/vakcína")
+    @PostMapping("/api/vakcina")
     public Long vytvorenieVakciny(@RequestBody VakcinaDto vakcina) {
         return vakcinaService.vytvorenieVakciny(vakcina);
     }
-
 
     //List of vakcina
     @GetMapping("/api/vakcina")
@@ -28,8 +25,7 @@ public class VakcinaController {
     }
     //Get vakcina BY ID
     @GetMapping("/api/vakcina/{vakcinaId}")
-    public VakcinaDto vytvorenieVakcinaId(@PathVariable Long vakcina, Long vakcinaId){
-
+    public VakcinaDto vytvorenieVakcinaId(@PathVariable Long vakcinaId){
         return vakcinaService.vytvorenieVakcinaId(vakcinaId);
     }
 
@@ -40,9 +36,8 @@ public class VakcinaController {
     }
 
     //Delete vakcina
-    @DeleteMapping("/api/osoby/{vakcínaId}")
+    @DeleteMapping("/api/vakcina/{vakcinaId}")
     public void deleteVakcina(@PathVariable Long vakcinaId){
         vakcinaService.deleteVakcina(vakcinaId);
     }
-
 }

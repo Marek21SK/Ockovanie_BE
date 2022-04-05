@@ -1,7 +1,5 @@
 package MDMMDM.demo;
 
-
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -38,14 +36,13 @@ public class VakcinaEntity {
     public String getPocet_davok(){
         return pocet_davok;
     }
-    public void setPocet_davok(String nazov){
+    public void setPocet_davok(String pocet_davok){
         this.pocet_davok = pocet_davok;
     }
     public String getTrvacnost(){
         return trvacnost;
     }
-    public void setTrvacnost(String nazov){
+    public void setTrvacnost(String trvacnost){
         this.trvacnost = trvacnost;
     }
-
     }

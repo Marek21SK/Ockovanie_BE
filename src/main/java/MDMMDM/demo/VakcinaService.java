@@ -1,13 +1,11 @@
 package MDMMDM.demo;
 
-
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 public class VakcinaService {
@@ -18,6 +16,7 @@ public class VakcinaService {
     public VakcinaService(VakcinaRepository vakcinaRepository) {
         this.vakcinaRepository = vakcinaRepository;
     }
+
     private static VakcinaDto mapVakcinaDto(VakcinaEntity vakcinaEntity){
         VakcinaDto vakcinaDto = new VakcinaDto();
 
@@ -31,8 +30,6 @@ public class VakcinaService {
     }
     //List of vakcina
     @Transactional
-
-
     public List<VakcinaDto> vytvorenieVakciny(String vakcinaNazov){
         List<VakcinaDto> ret = new LinkedList<>();
         for (VakcinaEntity v1 : vakcinaRepository.findAll()){
@@ -65,6 +62,7 @@ public class VakcinaService {
         }
         return null;
     }
+
     //Delete vakcia
     @Transactional
     public void deleteVakcina(Long vakcinaId){
@@ -78,7 +76,6 @@ public class VakcinaService {
     public void putVakcina(Long vakcinaId, VakcinaDto vakcinaDto){
         Optional<VakcinaEntity> byId = vakcinaRepository.findById(vakcinaId);
         if(byId.isPresent()){
-
             byId.get().setNazov(vakcinaDto.getNazov());
             byId.get().setVyrobca(vakcinaDto.getVyrobca());
             byId.get().setPocet_davok(vakcinaDto.getPocet_davok());
@@ -86,5 +83,4 @@ public class VakcinaService {
             byId.get().setId(vakcinaDto.getId());
         }
     }
-
 }
