@@ -22,7 +22,7 @@ public class OsobaService {
         osobaDto.setMeno(osobaEntity.getMeno());
         osobaDto.setPriezvisko(osobaEntity.getPriezvisko());
         osobaDto.setEmail(osobaEntity.getEmail());
-        osobaDto.setDatum_narodenia(osobaEntity.getDatum_narodenia());
+        osobaDto.setRodne_cislo(osobaEntity.getRodne_cislo());
         osobaDto.setKontakt(osobaEntity.getKontakt());
         osobaDto.setPohlavie(osobaEntity.getPohlavie());
         osobaDto.setBydlisko(osobaEntity.getBydlisko());
@@ -48,7 +48,7 @@ public class OsobaService {
         osobaEntity.setMeno(osobaDto.getMeno());
         osobaEntity.setPriezvisko(osobaDto.getPriezvisko());
         osobaEntity.setEmail(osobaDto.getEmail());
-        osobaEntity.setDatum_narodenia(osobaDto.getDatum_narodenia());
+        osobaEntity.setRodne_cislo(osobaDto.getRodne_cislo());
         osobaEntity.setKontakt(osobaDto.getKontakt());
         osobaEntity.setPohlavie(osobaDto.getPohlavie());
         osobaEntity.setBydlisko(osobaDto.getBydlisko());
@@ -85,7 +85,7 @@ public class OsobaService {
             byId.get().setMeno(osobaDto.getMeno());
             byId.get().setPriezvisko(osobaDto.getPriezvisko());
             byId.get().setEmail(osobaDto.getEmail());
-            byId.get().setDatum_narodenia(osobaDto.getDatum_narodenia());
+            byId.get().setRodne_cislo(osobaDto.getRodne_cislo());
             byId.get().setKontakt(osobaDto.getKontakt());
             byId.get().setPohlavie(osobaDto.getPohlavie());
             byId.get().setBydlisko(osobaDto.getBydlisko());

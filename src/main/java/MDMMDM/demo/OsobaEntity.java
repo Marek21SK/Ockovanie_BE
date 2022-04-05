@@ -13,7 +13,7 @@ public class OsobaEntity {
     private String meno;
     private String priezvisko;
     private String email;
-    private Date datum_narodenia;
+    private String rodne_cislo;
     private String kontakt;
     private String pohlavie;
     private String bydlisko;
@@ -50,12 +50,10 @@ public class OsobaEntity {
         this.email = email;
     }
 
-    public Date getDatum_narodenia() {
-        return datum_narodenia;
-    }
+    public String getRodne_cislo() {return rodne_cislo;}
 
-    public void setDatum_narodenia(Date datum_narodenia) {
-        this.datum_narodenia = datum_narodenia;
+    public void setRodne_cislo(String rodne_cislo) {
+        this.rodne_cislo = rodne_cislo;
     }
 
     public String getKontakt() {
