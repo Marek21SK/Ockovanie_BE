@@ -1,7 +1,5 @@
 package MDMMDM.demo;
 
-import java.util.Date;
-
 public class OsobaDto {
     private Long id;
     private String meno;
@@ -11,6 +9,7 @@ public class OsobaDto {
     private String kontakt;
     private String pohlavie;
     private String bydlisko;
+    private String nazov;
 
     public Long getId() {
         return id;
@@ -74,5 +73,13 @@ public class OsobaDto {
 
     public void setBydlisko(String bydlisko) {
         this.bydlisko = bydlisko;
+    }
+
+    public String getNazov() {
+        return nazov;
+    }
+
+    public void setNazov(String nazov) {
+        this.nazov = nazov;
     }
 }

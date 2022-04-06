@@ -3,7 +3,6 @@ package MDMMDM.demo;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.util.Date;
 
 @Entity
 public class OsobaEntity {
@@ -17,6 +16,7 @@ public class OsobaEntity {
     private String kontakt;
     private String pohlavie;
     private String bydlisko;
+    private String nazov;
 
     public Long getId() {
         return id;
@@ -78,5 +78,13 @@ public class OsobaEntity {
 
     public void setBydlisko(String bydlisko) {
         this.bydlisko = bydlisko;
+    }
+
+    public String getNazov() {
+        return nazov;
+    }
+
+    public void setNazov(String nazov) {
+        this.nazov = nazov;
     }
 }

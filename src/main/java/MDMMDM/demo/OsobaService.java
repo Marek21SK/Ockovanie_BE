@@ -26,6 +26,7 @@ public class OsobaService {
         osobaDto.setKontakt(osobaEntity.getKontakt());
         osobaDto.setPohlavie(osobaEntity.getPohlavie());
         osobaDto.setBydlisko(osobaEntity.getBydlisko());
+        osobaDto.setNazov(osobaEntity.getNazov());
         return osobaDto;
     }
 
@@ -52,6 +53,7 @@ public class OsobaService {
         osobaEntity.setKontakt(osobaDto.getKontakt());
         osobaEntity.setPohlavie(osobaDto.getPohlavie());
         osobaEntity.setBydlisko(osobaDto.getBydlisko());
+        osobaEntity.setNazov(osobaDto.getNazov());
 
         this.osobaRepository.save(osobaEntity);
         return osobaEntity.getId();
@@ -89,6 +91,7 @@ public class OsobaService {
             byId.get().setKontakt(osobaDto.getKontakt());
             byId.get().setPohlavie(osobaDto.getPohlavie());
             byId.get().setBydlisko(osobaDto.getBydlisko());
+            byId.get().setNazov(osobaDto.getNazov());
             byId.get().setId(osobaDto.getId());
         }
     }
