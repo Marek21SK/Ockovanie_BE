@@ -1,4 +1,4 @@
-package MDMMDM.demo;
+package MDMMDM.demo.controllers.Dto;
 
 public class VakcinaDto {
     private Long id;

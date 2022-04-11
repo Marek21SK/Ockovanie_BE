@@ -1,7 +1,9 @@
-package MDMMDM.demo;
+package MDMMDM.demo.service;
 
+import MDMMDM.demo.controllers.Dto.OsobaDto;
+import MDMMDM.demo.entity.OsobaEntity;
+import MDMMDM.demo.domain.repositories.OsobaRepository;
 import org.springframework.stereotype.Service;
-
 import javax.transaction.Transactional;
 import java.util.LinkedList;
 import java.util.List;

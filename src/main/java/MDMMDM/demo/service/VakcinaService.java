@@ -1,7 +1,9 @@
-package MDMMDM.demo;
+package MDMMDM.demo.service;
 
+import MDMMDM.demo.controllers.Dto.VakcinaDto;
+import MDMMDM.demo.entity.VakcinaEntity;
+import MDMMDM.demo.domain.repositories.VakcinaRepository;
 import org.springframework.stereotype.Service;
-
 import javax.transaction.Transactional;
 import java.util.LinkedList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package MDMMDM.demo;
+package MDMMDM.demo.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

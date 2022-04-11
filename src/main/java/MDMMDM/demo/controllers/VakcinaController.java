@@ -1,7 +1,8 @@
-package MDMMDM.demo;
+package MDMMDM.demo.controllers;
 
+import MDMMDM.demo.controllers.Dto.VakcinaDto;
+import MDMMDM.demo.service.VakcinaService;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController

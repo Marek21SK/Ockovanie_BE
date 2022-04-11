@@ -1,5 +1,7 @@
-package MDMMDM.demo;
+package MDMMDM.demo.controllers;
 
+import MDMMDM.demo.controllers.Dto.OsobaDto;
+import MDMMDM.demo.service.OsobaService;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 

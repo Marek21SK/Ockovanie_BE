@@ -1,4 +1,4 @@
-package MDMMDM.demo;
+package MDMMDM.demo.controllers.Dto;
 
 public class OsobaDto {
     private Long id;
