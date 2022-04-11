@@ -3,7 +3,7 @@ package MDMMDM.demo;
 import javax.persistence.*;
 
 @Entity
-public class VakcinaciaEntity {
+public class VakcinaciaEntity  {
     @Id
     @GeneratedValue
     private Long id;

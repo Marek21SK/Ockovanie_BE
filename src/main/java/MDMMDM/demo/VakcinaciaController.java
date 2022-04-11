@@ -12,8 +12,12 @@ public class VakcinaciaController {
         this.vakcinaciaService = vakcinaciaService;
 
     }
+    @GetMapping("/api/vakcinacia")
+    public List<VakcinaciaDto> getVakcina(@RequestParam(required = false)Long vakcinaciaId){
+        return  vakcinaciaService.getVakcinacia(vakcinaciaId);
+    }
     @GetMapping("api/vakcinacia")
-    public List<VakcinaciaDto> getVakcinacia(@RequestParam(required = false) Long vakcinaciaId){
+    public List<VakcinaciaDto> getAllVakcinacia(@PathVariable Long vakcinaciaId){
         return vakcinaciaService.getVakcinacia(vakcinaciaId);
     }
     @PostMapping("/api/vakcinacia")
