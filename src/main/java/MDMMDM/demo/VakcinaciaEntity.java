@@ -4,17 +4,18 @@ import javax.persistence.*;
 
 @Entity
 public class VakcinaciaEntity  {
+
     @Id
     @GeneratedValue
     private Long id;
 
     @JoinColumn(name = "osoba_id")
     @ManyToOne(fetch = FetchType.LAZY)
-    private static OsobaEntity osoba;
+    private OsobaEntity osoba;
 
     @JoinColumn(name = "vakcina_id")
     @ManyToOne(fetch = FetchType.LAZY)
-    private VakcinaciaEntity vakcina;
+    private VakcinaEntity vakcina;
 
     public Long getId() {
         return id;
@@ -24,7 +25,7 @@ public class VakcinaciaEntity  {
         this.id = id;
     }
 
-    public static OsobaEntity getOsoba() {
+    public  OsobaEntity getOsoba() {
         return osoba;
     }
 
@@ -32,11 +33,11 @@ public class VakcinaciaEntity  {
         this.osoba = osoba;
     }
 
-    public VakcinaciaEntity getVakcina() {
+    public VakcinaEntity getVakcina() {
         return vakcina;
     }
 
-    public void setVakcina(VakcinaciaEntity vakcina) {
+    public void setVakcina(VakcinaEntity vakcina) {
         this.vakcina = vakcina;
     }
 
@@ -44,7 +45,7 @@ public class VakcinaciaEntity  {
         return String.valueOf(vakcina);
     }
 
-    public void setnazov(VakcinaciaEntity nazov) {
+    public void setNazov(VakcinaEntity nazov) {
         this.vakcina= nazov;
     }
 

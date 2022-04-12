@@ -3,7 +3,6 @@ package MDMMDM.demo;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 public class VakcinaciaController {
@@ -11,21 +10,24 @@ public class VakcinaciaController {
 
     public VakcinaciaController(VakcinaciaService vakcinaciaService){
         this.vakcinaciaService = vakcinaciaService;
+    }
 
+    @GetMapping("/api/vakcinacie")
+    public List<VakcinaciaListDto> getVakciny(@RequestParam(required = false)Long vakcinaciaId){
+        return  vakcinaciaService.getVakcinacie(vakcinaciaId);
     }
-    @GetMapping("/api/vakcinacia")
-    public List<VakcinaciaDto> getVakcina(@RequestParam(required = false)Long vakcinaciaId){
-        return  vakcinaciaService.getVakcinacia(vakcinaciaId);
-    }
-    @GetMapping("api/vakcinacia")
-    public VakcinaciaListDto getAllVakcinacia(@PathVariable Long vakcinaciaId){
+
+    @GetMapping("api/vakcinacie/{vakcinaciaId}")
+    public VakcinaciaListDto getAllVakcinacie(@PathVariable Long vakcinaciaId){
         return vakcinaciaService.getVakcinacia(vakcinaciaId);
     }
-    @PostMapping("/api/vakcinacia")
+
+    @PostMapping("/api/vakcinacie")
     public Long createVakcinacia(@RequestBody VakcinaciaDto vakcinaciaDto){
         return vakcinaciaService.createVakcinacia(vakcinaciaDto);
     }
-    @DeleteMapping("/api/vakcinacia/{vakcinaciaId}")
+
+    @DeleteMapping("/api/vakcinacie/{vakcinaciaId}")
     public void  deleteVakcinacia(@PathVariable Long vakcinaciaId){
         vakcinaciaService.deleteVakcinacia(vakcinaciaId);
     }

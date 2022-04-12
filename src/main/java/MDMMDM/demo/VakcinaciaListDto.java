@@ -4,9 +4,9 @@ public class VakcinaciaListDto {
     private Long id;
     private Long vakcinaId;
     private Long osobaId;
-    private String nazovVakciny;
-    private String menoOsoba;
-    private String priezviskoOsoba;
+    private String meno;
+    private String priezvisko;
+    private String nazov;
 
     public Long getId() {
         return id;
@@ -32,27 +32,27 @@ public class VakcinaciaListDto {
         this.osobaId = osobaId;
     }
 
-    public String getNazovVakciny() {
-        return nazovVakciny;
+    public String getMeno() {
+        return meno;
     }
 
-    public void setNazovVakciny(String nazovVakciny) {
-        this.nazovVakciny = nazovVakciny;
+    public void setMeno(String meno) {
+        this.meno = meno;
     }
 
-    public String getMenoOsoba() {
-        return menoOsoba;
+    public String getPriezvisko() {
+        return priezvisko;
     }
 
-    public void setMenoOsoba(String menoOsoba) {
-        this.menoOsoba = menoOsoba;
+    public void setPriezvisko(String priezvisko) {
+        this.priezvisko = priezvisko;
     }
 
-    public String getPriezviskoOsoba() {
-        return priezviskoOsoba;
+    public String getNazov() {
+        return nazov;
     }
 
-    public void setPriezviskoOsoba(String priezviskoOsoba) {
-        this.priezviskoOsoba = priezviskoOsoba;
+    public void setNazov(String nazov) {
+        this.nazov = nazov;
     }
 }
