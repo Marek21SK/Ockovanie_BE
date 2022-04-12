@@ -41,21 +41,20 @@ public class VakcinaciaService {
 
         Optional<VakcinaciaEntity> v1 = vakcinaciaRepository.findById(vakcinaciaDto.getVakcinaId());
         Optional<OsobaEntity> o1 = osobaRepository.findById(vakcinaciaDto.getOsobaId());
-        VakcinaEntity vakcinaEntity = v1.get();
+
 
         return vakcinacia.getId();
     }
     @Transactional
     public VakcinaciaListDto getVakcinacia(Long vakcinaciaId) {
-        VakcinaciaDto result = null;
         Optional<VakcinaciaEntity> byId = vakcinaciaRepository.findById(vakcinaciaId);
         if (byId.isPresent()) {
-            return;  = mapToVakcinaciaDto(byId.get());
+            return mapToVakcinaciaDto(byId.get());
         }
         return null;
     }
     @Transactional
-    public List<VakcinaciaListDto> getVakcinacia(Long vakcinaciaId){
+    public List<VakcinaciaListDto> getVakcinacia (Long vakcinaciaId){
         List<VakcinaciaListDto> vakcinacia = new LinkedList<>();
         for(VakcinaciaEntity k1 : vakcinaciaRepository.findAll()){
             VakcinaciaDto k2 = mapToVakcinaciaDto(k1);
