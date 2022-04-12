@@ -3,6 +3,7 @@ package MDMMDM.demo;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class VakcinaciaController {
@@ -17,7 +18,7 @@ public class VakcinaciaController {
         return  vakcinaciaService.getVakcinacia(vakcinaciaId);
     }
     @GetMapping("api/vakcinacia")
-    public List<VakcinaciaDto> getAllVakcinacia(@PathVariable Long vakcinaciaId){
+    public VakcinaciaListDto getAllVakcinacia(@PathVariable Long vakcinaciaId){
         return vakcinaciaService.getVakcinacia(vakcinaciaId);
     }
     @PostMapping("/api/vakcinacia")
