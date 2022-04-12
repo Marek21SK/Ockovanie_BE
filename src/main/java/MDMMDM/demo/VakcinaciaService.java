@@ -3,9 +3,6 @@ package MDMMDM.demo;
 import org.springframework.stereotype.Service;
 
 
-
-import org.springframework.stereotype.Service;
-
 import javax.transaction.Transactional;
 import java.util.LinkedList;
 import java.util.List;
@@ -18,16 +15,16 @@ public class VakcinaciaService {
     private OsobaRepository osobaRepository;
     private VakcinaRepository vakcinaRepository;
 
-    private static VakcinaciaDto mapToVakcinaciaDto(VakcinaciaEntity vakcinaciaEntity){
-        VakcinaciaDto vakcinaciaDto = new VakcinaciaDto();
+    private static VakcinaciaListDto mapToVakcinaciaDto(VakcinaciaEntity vakcinaciaEntity){
+       VakcinaciaListDto vakcinaciaListDto = new VakcinaciaListDto();
 
-        vakcinaciaDto.setId(vakcinaciaEntity.getId());
-        vakcinaciaDto.setOsobaId(vakcinaciaEntity.getOsoba().getId());
-        vakcinaciaDto.setVakcinaId(vakcinaciaEntity.getVakcina().getId());
-        vakcinaciaDto.setMenoOsoba(vakcinaciaEntity.getOsoba().getMeno()+ " " +VakcinaciaEntity.getOsoba().getPriezvisko());
-        vakcinaciaDto.setNazovVakciny(vakcinaciaEntity.getVakcina().getNazov());
+        vakcinaciaListDto.setId(vakcinaciaEntity.getId());
+        vakcinaciaListDto.setOsobaId(vakcinaciaEntity.getOsoba().getId());
+        vakcinaciaListDto.setVakcinaId(vakcinaciaEntity.getVakcina().getId());
+        vakcinaciaListDto.setMenoOsoba(vakcinaciaEntity.getOsoba().getMeno()+ " " +VakcinaciaEntity.getOsoba().getPriezvisko());
+        vakcinaciaListDto.setNazovVakciny(vakcinaciaEntity.getVakcina().getNazov());
 
-        return vakcinaciaDto;
+        return vakcinaciaListDto;
     }
     public VakcinaciaService(VakcinaciaRepository vakcinaciaRepository, OsobaRepository osobaRepository, VakcinaRepository vakcinaRepository){
         this.vakcinaRepository = vakcinaRepository;
@@ -54,13 +51,13 @@ public class VakcinaciaService {
         return null;
     }
     @Transactional
-    public List<VakcinaciaListDto> getVakcinacia (Long vakcinaciaId){
-        List<VakcinaciaListDto> vakcinacia = new LinkedList<>();
+    public List<VakcinaciaListDto> getVakcinacie  (Long vakcinaciaId){
+        List<VakcinaciaListDto> vakcinacie = new LinkedList<>();
         for(VakcinaciaEntity k1 : vakcinaciaRepository.findAll()){
-            VakcinaciaDto k2 = mapToVakcinaciaDto(k1);
-            vakcinacia.add(k2);
+            VakcinaciaListDto k2 = mapToVakcinaciaDto(k1);
+            vakcinacie.add(k2);
         }
-        return vakcinacia;
+        return vakcinacie;
     }
     @Transactional
     public void deleteVakcinacia (Long vakcinaciaId){

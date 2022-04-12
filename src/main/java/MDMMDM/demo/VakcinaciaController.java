@@ -2,9 +2,6 @@ package MDMMDM.demo;
 
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.Optional;
-
 @RestController
 public class VakcinaciaController {
     private VakcinaciaService vakcinaciaService;
@@ -14,7 +11,7 @@ public class VakcinaciaController {
 
     }
     @GetMapping("/api/vakcinacia")
-    public List<VakcinaciaDto> getVakcina(@RequestParam(required = false)Long vakcinaciaId){
+    public VakcinaciaListDto getVakcina(@RequestParam(required = false)Long vakcinaciaId){
         return  vakcinaciaService.getVakcinacia(vakcinaciaId);
     }
     @GetMapping("api/vakcinacia")
