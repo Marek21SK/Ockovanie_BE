@@ -40,16 +40,5 @@ public class VakcinaciaEntity  {
     public void setVakcina(VakcinaEntity vakcina) {
         this.vakcina = vakcina;
     }
-
-    public String getNazov() {
-        return String.valueOf(vakcina);
-    }
-
-    public void setNazov(VakcinaEntity nazov) {
-        this.vakcina= nazov;
-    }
-
-
-
 }
 
