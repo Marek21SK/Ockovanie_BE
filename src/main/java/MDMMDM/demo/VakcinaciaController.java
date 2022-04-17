@@ -1,6 +1,9 @@
 package MDMMDM.demo;
 
+import MDMMDM.demo.exceptions.InvalidVaccinationException;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.HttpServerErrorException;
 
 import java.util.List;
 
@@ -23,8 +26,12 @@ public class VakcinaciaController {
     }
 
     @PostMapping("/api/vakcinacie")
-    public Long createVakcinacia(@RequestBody VakcinaciaDto vakcinaciaDto){
-        return vakcinaciaService.createVakcinacia(vakcinaciaDto);
+    public Long createVakcinacia(@RequestBody VakcinaciaDto vakcinaciaDto) throws HttpServerErrorException {
+        try {
+            return vakcinaciaService.createVakcinacia(vakcinaciaDto);
+        } catch (InvalidVaccinationException e) {
+            throw new HttpServerErrorException(HttpStatus.CONFLICT, "Invalid parameters");
+        }
     }
 
     @DeleteMapping("/api/vakcinacie/{vakcinaciaId}")

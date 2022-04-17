@@ -4,8 +4,6 @@ public class VakcinaciaListDto {
     private Long id;
     private Long vakcinaId;
     private Long osobaId;
-    private String meno;
-    private String nazov;
 
     public Long getId() {
         return id;
@@ -29,21 +27,5 @@ public class VakcinaciaListDto {
 
     public void setOsobaId(Long osobaId) {
         this.osobaId = osobaId;
-    }
-
-    public String getMeno() {
-        return meno;
-    }
-
-    public void setMeno(String meno) {
-        this.meno = meno;
-    }
-
-    public String getNazov() {
-        return nazov;
-    }
-
-    public void setNazov(String nazov) {
-        this.nazov = nazov;
     }
 }
