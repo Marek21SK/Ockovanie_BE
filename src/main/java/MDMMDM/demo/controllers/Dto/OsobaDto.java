@@ -1,15 +1,22 @@
 package MDMMDM.demo.controllers.Dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import java.time.LocalDate;
+
 public class OsobaDto {
     private Long id;
     private String meno;
     private String priezvisko;
     private String email;
-    private String rodne_cislo;
+    private String rodneCislo;
     private String kontakt;
     private String pohlavie;
     private String bydlisko;
-    private String nazov;
+    private String nazovVakciny;
+    private Integer pocetDavok;
+
+    @JsonFormat(pattern="dd.MM.yyyy")
+    private LocalDate zaockovanostDo;
 
     public Long getId() {
         return id;
@@ -44,11 +51,11 @@ public class OsobaDto {
     }
 
     public String getRodne_cislo() {
-        return rodne_cislo;
+        return rodneCislo;
     }
 
-    public void setRodne_cislo(String rodne_cislo) {
-        this.rodne_cislo = rodne_cislo;
+    public void setRodne_cislo(String rodneCislo) {
+        this.rodneCislo = rodneCislo;
     }
 
     public String getKontakt() {
@@ -75,11 +82,27 @@ public class OsobaDto {
         this.bydlisko = bydlisko;
     }
 
-    public String getNazov() {
-        return nazov;
+    public String getNazovVakciny() {
+        return nazovVakciny;
     }
 
-    public void setNazov(String nazov) {
-        this.nazov = nazov;
+    public void setNazovVakciny(String nazovVakciny) {
+        this.nazovVakciny = nazovVakciny;
+    }
+
+    public Integer getPocet_davok(){
+        return this.pocetDavok;
+    }
+
+    public void setPocet_davok(Integer pocetDavok){
+        this.pocetDavok = pocetDavok;
+    }
+
+    public LocalDate getZaockovanostDo() {
+        return zaockovanostDo;
+    }
+
+    public void setZaockovanostDo(LocalDate zaockovanostDo) {
+        this.zaockovanostDo = zaockovanostDo;
     }
 }

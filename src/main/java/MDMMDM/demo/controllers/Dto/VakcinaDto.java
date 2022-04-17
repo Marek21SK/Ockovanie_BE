@@ -4,8 +4,8 @@ public class VakcinaDto {
     private Long id;
     private String nazov;
     private String vyrobca;
-    private String pocet_davok;
-    private String trvacnost;
+    private Integer pocetDavok;
+    private Integer trvacnost;
 
     public Long getId(){
         return id;
@@ -26,16 +26,16 @@ public class VakcinaDto {
     public void setVyrobca(String vyrobca){
         this.vyrobca = vyrobca;
     }
-    public String getPocet_davok(){
-        return this.pocet_davok;
+    public Integer getPocet_davok(){
+        return this.pocetDavok;
     }
-    public void setPocet_davok(String pocet_davok){
-        this.pocet_davok = pocet_davok;
+    public void setPocet_davok(Integer pocetDavok){
+        this.pocetDavok = pocetDavok;
     }
-    public String getTrvacnost(){
+    public Integer getTrvacnost(){
         return this.trvacnost;
     }
-    public void setTrvacnost(String trvacnost){
+    public void setTrvacnost(Integer trvacnost){
         this.trvacnost = trvacnost;
     }
 }
