@@ -1,12 +1,15 @@
 package MDMMDM.demo;
 
+import MDMMDM.demo.exceptions.InvalidVaccinationException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-
 import javax.transaction.Transactional;
+import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 
+@Slf4j
 @Service
 public class VakcinaciaService {
 
@@ -20,8 +23,6 @@ public class VakcinaciaService {
         vakcinaciaListDto.setId(vakcinaciaEntity.getId());
         vakcinaciaListDto.setOsobaId(vakcinaciaEntity.getOsoba().getId());
         vakcinaciaListDto.setVakcinaId(vakcinaciaEntity.getVakcina().getId());
-        vakcinaciaListDto.setMeno(vakcinaciaEntity.getOsoba().getMeno());
-        vakcinaciaListDto.setNazov(vakcinaciaEntity.getVakcina().getNazov());
 
         return vakcinaciaListDto;
     }
@@ -32,12 +33,38 @@ public class VakcinaciaService {
 
     }
     @Transactional
-    public Long createVakcinacia(VakcinaciaDto vakcinaciaDto) {
-        VakcinaciaEntity vakcinacia = new VakcinaciaEntity();
+    public Long createVakcinacia(VakcinaciaDto vakcinaciaDto) throws InvalidVaccinationException {
 
         Optional<VakcinaEntity> v1 = vakcinaRepository.findById(vakcinaciaDto.getVakcinaId());
         Optional<OsobaEntity> o1 = osobaRepository.findById(vakcinaciaDto.getOsobaId());
-        VakcinaEntity vakcinaEntity = v1.get();
+
+        if (v1.isEmpty() || o1.isEmpty()) {
+            throw new InvalidVaccinationException();
+        }
+
+        OsobaEntity osoba = o1.get();
+        VakcinaEntity vakcina = v1.get();
+
+        // if(vakcina.equals(osoba.getVakcina()) { throw InvalidVaccineException() -> HTTP Status 409) }
+
+        if (!osoba.isVaccinated()) {
+            osoba.setPocet_davok(0);
+            osoba.setVakcina(vakcina);
+        }
+
+        VakcinaciaEntity vakcinacia = new VakcinaciaEntity();
+
+        vakcinacia.setOsoba(osoba);
+        vakcinacia.setVakcina(vakcina);
+        vakcinacia.setDatum(LocalDate.now());
+
+        vakcinaciaRepository.save(vakcinacia);
+        osoba.setPocet_davok(osoba.getPocet_davok()+ 1);
+        if (osoba.getPocet_davok() >= vakcina.getPocet_davok()){
+            osoba.setZaockovanostDo(LocalDate.now().plusDays(vakcina.getTrvacnost()));
+        }
+
+        osobaRepository.save(osoba);
 
         return vakcinacia.getId();
     }

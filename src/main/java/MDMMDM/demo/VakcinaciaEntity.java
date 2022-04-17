@@ -1,6 +1,7 @@
 package MDMMDM.demo;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 public class VakcinaciaEntity  {
@@ -16,6 +17,9 @@ public class VakcinaciaEntity  {
     @JoinColumn(name = "vakcina_id")
     @ManyToOne(fetch = FetchType.LAZY)
     private VakcinaEntity vakcina;
+
+    @Column(name = "datum", columnDefinition = "DATE")
+    private LocalDate datum;
 
     public Long getId() {
         return id;
@@ -39,6 +43,14 @@ public class VakcinaciaEntity  {
 
     public void setVakcina(VakcinaEntity vakcina) {
         this.vakcina = vakcina;
+    }
+
+    public LocalDate getDatum() {
+        return datum;
+    }
+
+    public void setDatum(LocalDate datum) {
+        this.datum = datum;
     }
 }
 
