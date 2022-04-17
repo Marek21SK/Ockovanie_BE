@@ -1,8 +1,7 @@
 package MDMMDM.demo;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 public class OsobaEntity {
@@ -16,7 +15,14 @@ public class OsobaEntity {
     private String kontakt;
     private String pohlavie;
     private String bydlisko;
-    private String nazov;
+    private Integer pocetDavok;
+
+    @JoinColumn(name = "vakcina_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private VakcinaEntity vakcina;
+
+    @Column(name = "zaockovanost_do", columnDefinition = "DATE")
+    private LocalDate zaockovanostDo;
 
     public Long getId() {
         return id;
@@ -80,11 +86,31 @@ public class OsobaEntity {
         this.bydlisko = bydlisko;
     }
 
-    public String getNazov() {
-        return nazov;
+    public Integer getPocet_davok(){
+        return this.pocetDavok;
     }
 
-    public void setNazov(String nazov) {
-        this.nazov = nazov;
+    public void setPocet_davok(Integer pocetDavok){
+        this.pocetDavok = pocetDavok;
+    }
+
+    public VakcinaEntity getVakcina() {
+        return vakcina;
+    }
+
+    public void setVakcina(VakcinaEntity vakcina) {
+        this.vakcina = vakcina;
+    }
+
+    public boolean isVaccinated() {
+        return vakcina != null;
+    }
+
+    public LocalDate getZaockovanostDo() {
+        return zaockovanostDo;
+    }
+
+    public void setZaockovanostDo(LocalDate zaockovanostDo) {
+        this.zaockovanostDo = zaockovanostDo;
     }
 }
