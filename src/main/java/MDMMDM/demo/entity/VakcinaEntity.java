@@ -3,6 +3,7 @@ package MDMMDM.demo.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.util.Date;
 
 @Entity
 public class VakcinaEntity {
@@ -11,8 +12,8 @@ public class VakcinaEntity {
     private Long id;
     private String nazov;
     private String vyrobca;
-    private String pocet_davok;
-    private String trvacnost;
+    private Integer pocetDavok;
+    private Integer trvacnost;
 
     public Long getId(){
         return this.id;
@@ -33,16 +34,16 @@ public class VakcinaEntity {
     public void setVyrobca(String vyrobca){
         this.vyrobca = vyrobca;
     }
-    public String getPocet_davok(){
-        return pocet_davok;
+    public Integer getPocet_davok(){
+        return pocetDavok;
     }
-    public void setPocet_davok(String pocet_davok){
-        this.pocet_davok = pocet_davok;
+    public void setPocet_davok(Integer pocetDavok){
+        this.pocetDavok = pocetDavok;
     }
-    public String getTrvacnost(){
+    public Integer getTrvacnost(){
         return trvacnost;
     }
-    public void setTrvacnost(String trvacnost){
+    public void setTrvacnost(Integer trvacnost){
         this.trvacnost = trvacnost;
     }
     }
