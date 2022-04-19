@@ -1,6 +1,9 @@
-package MDMMDM.demo;
+package MDMMDM.demo.controllers;
 
+import MDMMDM.demo.controllers.Dto.VakcinaciaDto;
+import MDMMDM.demo.controllers.Dto.VakcinaciaListDto;
 import MDMMDM.demo.exceptions.InvalidVaccinationException;
+import MDMMDM.demo.service.VakcinaciaService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.HttpServerErrorException;

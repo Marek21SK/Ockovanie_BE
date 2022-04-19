@@ -1,6 +1,6 @@
-package MDMMDM.demo;
+package MDMMDM.demo.controllers.Dto;
 
-public class VakcinaciaListDto {
+public class VakcinaciaDto {
     private Long id;
     private Long vakcinaId;
     private Long osobaId;

@@ -1,5 +1,13 @@
-package MDMMDM.demo;
+package MDMMDM.demo.service;
 
+import MDMMDM.demo.controllers.Dto.VakcinaciaDto;
+import MDMMDM.demo.domain.repositories.VakcinaRepository;
+import MDMMDM.demo.domain.repositories.OsobaRepository;
+import MDMMDM.demo.entity.VakcinaciaEntity;
+import MDMMDM.demo.entity.OsobaEntity;
+import MDMMDM.demo.entity.VakcinaEntity;
+import MDMMDM.demo.controllers.Dto.VakcinaciaListDto;
+import MDMMDM.demo.domain.repositories.VakcinaciaRepository;
 import MDMMDM.demo.exceptions.InvalidVaccinationException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
