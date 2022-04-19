@@ -1,4 +1,4 @@
-package MDMMDM.demo;
+package MDMMDM.demo.CorsConfig;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
