@@ -21,8 +21,15 @@ public class OsobaEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     private VakcinaEntity vakcina;
 
+
+      @Column(name = "zaockovanost_do", columnDefinition = "DATE")
+          private LocalDate zaockovanostOd;
+
+
     @Column(name = "zaockovanost_do", columnDefinition = "DATE")
     private LocalDate zaockovanostDo;
+
+
 
     public Long getId() {
         return id;
@@ -113,4 +120,15 @@ public class OsobaEntity {
     public void setZaockovanostDo(LocalDate zaockovanostDo) {
         this.zaockovanostDo = zaockovanostDo;
     }
-}
+
+    public LocalDate getZaockovanostOd() {
+        return zaockovanostOd;
+    }
+
+    public void setZaockovanostod(LocalDate zaockovanostod) {
+        this.zaockovanostOd = zaockovanostOd;
+    }
+
+
+    }
+

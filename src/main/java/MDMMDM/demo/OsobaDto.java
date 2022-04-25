@@ -18,6 +18,9 @@ public class OsobaDto {
     @JsonFormat(pattern="dd.MM.yyyy")
     private LocalDate zaockovanostDo;
 
+    @JsonFormat(pattern="dd.MM.yyyy")
+    private LocalDate zaockovanostOd;
+
     public Long getId() {
         return id;
     }
@@ -105,4 +108,16 @@ public class OsobaDto {
     public void setZaockovanostDo(LocalDate zaockovanostDo) {
         this.zaockovanostDo = zaockovanostDo;
     }
-}
+
+    public LocalDate getZaockovanostOd() {
+        return zaockovanostOd;
+    }
+
+    public void setZaockovanostOd(LocalDate zaockovanostOd) {
+        this.zaockovanostOd = zaockovanostOd;
+    }
+
+
+
+    }
+
