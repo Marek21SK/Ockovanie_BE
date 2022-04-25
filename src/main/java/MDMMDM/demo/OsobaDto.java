@@ -1,6 +1,8 @@
 package MDMMDM.demo;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+
+import java.time.Duration;
 import java.time.LocalDate;
 
 public class OsobaDto {
@@ -20,6 +22,8 @@ public class OsobaDto {
 
     @JsonFormat(pattern="dd.MM.yyyy")
     private LocalDate zaockovanostOd;
+
+    long thirty = Duration.between(zaockovanostOd, zaockovanostDo).toDays();
 
     public Long getId() {
         return id;

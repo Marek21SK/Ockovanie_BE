@@ -1,6 +1,7 @@
 package MDMMDM.demo;
 
 import javax.persistence.*;
+import java.time.Duration;
 import java.time.LocalDate;
 
 @Entity
@@ -20,6 +21,8 @@ public class VakcinaciaEntity  {
 
     @Column(name = "datum", columnDefinition = "DATE")
     private LocalDate datum;
+
+    long five = Duration.between(osoba.getZaockovanostOd(), osoba.getZaockovanostOd()).toDays();
 
     public Long getId() {
         return id;

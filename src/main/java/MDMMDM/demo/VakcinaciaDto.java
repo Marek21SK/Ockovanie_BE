@@ -1,5 +1,7 @@
 package MDMMDM.demo;
 
+import java.time.Duration;
+
 public class VakcinaciaDto {
     private Long id;
     private Long vakcinaId;
@@ -28,4 +30,6 @@ public class VakcinaciaDto {
     public void setOsobaId(Long osobaId) {
         this.osobaId = osobaId;
     }
+
+
 }
