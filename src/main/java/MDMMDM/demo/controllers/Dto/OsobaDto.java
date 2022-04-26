@@ -1,6 +1,8 @@
 package MDMMDM.demo.controllers.Dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+
+import java.time.Duration;
 import java.time.LocalDate;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -20,6 +22,11 @@ public class OsobaDto {
 
     @JsonFormat(pattern="dd.MM.yyyy")
     private LocalDate zaockovanostDo;
+
+    @JsonFormat(pattern="dd.MM.yyyy")
+    private LocalDate zaockovanostOd;
+
+    long thirty = Duration.between(zaockovanostOd, zaockovanostDo).toDays();
 
     public Long getId() {
         return id;
@@ -107,5 +114,13 @@ public class OsobaDto {
 
     public void setZaockovanostDo(LocalDate zaockovanostDo) {
         this.zaockovanostDo = zaockovanostDo;
+    }
+
+    public LocalDate getZaockovanostOd() {
+        return zaockovanostOd;
+    }
+
+    public void setZaockovanostOd(LocalDate zaockovanostOd) {
+        this.zaockovanostOd = zaockovanostOd;
     }
 }

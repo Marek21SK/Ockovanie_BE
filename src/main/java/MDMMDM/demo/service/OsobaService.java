@@ -32,6 +32,7 @@ public class OsobaService {
             osobaDto.setNazovVakciny(osobaEntity.getVakcina().getNazov());
             osobaDto.setPocet_davok(osobaEntity.getPocet_davok());
             osobaDto.setZaockovanostDo(osobaEntity.getZaockovanostDo());
+            osobaDto.setZaockovanostOd(osobaEntity.getZaockovanostOd());
         }
         osobaDto.setPocet_davok(osobaEntity.getPocet_davok());
         return osobaDto;
