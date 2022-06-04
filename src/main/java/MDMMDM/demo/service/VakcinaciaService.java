@@ -31,6 +31,9 @@ public class VakcinaciaService {
         vakcinaciaListDto.setId(vakcinaciaEntity.getId());
         vakcinaciaListDto.setOsobaId(vakcinaciaEntity.getOsoba().getId());
         vakcinaciaListDto.setVakcinaId(vakcinaciaEntity.getVakcina().getId());
+        vakcinaciaListDto.setOsobaMeno(vakcinaciaEntity.getOsoba().getMeno());
+        vakcinaciaListDto.setOsobaPriezvisko(vakcinaciaEntity.getOsoba().getPriezvisko());
+        vakcinaciaListDto.setNazovVakcin(vakcinaciaEntity.getVakcina().getNazov());
 
         return vakcinaciaListDto;
     }

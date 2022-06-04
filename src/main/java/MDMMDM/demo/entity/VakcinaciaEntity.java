@@ -21,6 +21,16 @@ public class VakcinaciaEntity  {
     @Column(name = "datum", columnDefinition = "DATE")
     private LocalDate datum;
 
+    public VakcinaciaEntity(OsobaEntity osoba, VakcinaEntity vakcina, Long id, LocalDate datum){
+        this.id = id;
+        this.osoba = osoba;
+        this.vakcina = vakcina;
+        this.datum = datum;
+    }
+
+    public VakcinaciaEntity(){
+    }
+
     public Long getId() {
         return id;
     }
