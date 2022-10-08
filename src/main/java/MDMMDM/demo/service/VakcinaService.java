@@ -25,7 +25,7 @@ public class VakcinaService {
         vakcinaDto.setId(vakcinaEntity.getId());
         vakcinaDto.setNazov(vakcinaEntity.getNazov());
         vakcinaDto.setVyrobca(vakcinaEntity.getVyrobca());
-        vakcinaDto.setPocet_davok(vakcinaEntity.getPocet_davok());
+        vakcinaDto.setPocetDavok(vakcinaEntity.getPocetDavok());
         vakcinaDto.setTrvacnost(vakcinaEntity.getTrvacnost());
         return vakcinaDto;
 
@@ -47,7 +47,7 @@ public class VakcinaService {
 
         vakcinaEntity.setVyrobca(vakcinaDto.getVyrobca());
         vakcinaEntity.setNazov(vakcinaDto.getNazov());
-        vakcinaEntity.setPocet_davok(vakcinaDto.getPocet_davok());
+        vakcinaEntity.setPocetDavok(vakcinaDto.getPocetDavok());
         vakcinaEntity.setTrvacnost(vakcinaDto.getTrvacnost());
 
         this.vakcinaRepository.save(vakcinaEntity);
@@ -80,7 +80,7 @@ public class VakcinaService {
         if(byId.isPresent()){
             byId.get().setNazov(vakcinaDto.getNazov());
             byId.get().setVyrobca(vakcinaDto.getVyrobca());
-            byId.get().setPocet_davok(vakcinaDto.getPocet_davok());
+            byId.get().setPocetDavok(vakcinaDto.getPocetDavok());
             byId.get().setTrvacnost(vakcinaDto.getTrvacnost());
             byId.get().setId(vakcinaDto.getId());
         }

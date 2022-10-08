@@ -71,7 +71,7 @@ public class VakcinaciaService {
 
         vakcinaciaRepository.save(vakcinacia);
         osoba.setPocet_davok(osoba.getPocet_davok()+ 1);
-        if (osoba.getPocet_davok() >= vakcina.getPocet_davok()){
+        if (osoba.getPocet_davok() >= vakcina.getPocetDavok()){
             osoba.setZaockovanostDo(LocalDate.now().plusDays(vakcina.getTrvacnost()));
         }
 

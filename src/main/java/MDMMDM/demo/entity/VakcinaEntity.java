@@ -1,11 +1,14 @@
 package MDMMDM.demo.entity;
 
+import lombok.Data;
+import lombok.experimental.Accessors;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.util.Date;
 
 @Entity
+@Data
+@Accessors(chain = true)
 public class VakcinaEntity {
     @Id
     @GeneratedValue
@@ -14,12 +17,13 @@ public class VakcinaEntity {
     private String vyrobca;
     private Integer pocetDavok;
     private Integer trvacnost;
-
+    /*
     public Long getId(){
         return this.id;
     }
-    public void setId(Long id){
+    public VakcinaEntity setId(Long id){
         this.id = id;
+        return this;
     }
     public String getNazov(){
         return nazov;
@@ -46,4 +50,6 @@ public class VakcinaEntity {
     public void setTrvacnost(Integer trvacnost){
         this.trvacnost = trvacnost;
     }
-    }
+
+     */
+}

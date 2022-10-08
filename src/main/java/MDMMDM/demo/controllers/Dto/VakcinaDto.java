@@ -1,5 +1,10 @@
 package MDMMDM.demo.controllers.Dto;
 
+import lombok.Data;
+import lombok.experimental.Accessors;
+
+@Data
+@Accessors(chain = true)
 public class VakcinaDto {
     private Long id;
     private String nazov;
@@ -7,6 +12,7 @@ public class VakcinaDto {
     private Integer pocetDavok;
     private Integer trvacnost;
 
+    /*
     public Long getId(){
         return id;
     }
@@ -38,4 +44,6 @@ public class VakcinaDto {
     public void setTrvacnost(Integer trvacnost){
         this.trvacnost = trvacnost;
     }
+
+     */
 }
